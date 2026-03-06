@@ -5,6 +5,8 @@ const redisClient = require("./config/redis");
 const complaintRoutes = require("./routes/complaintRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const app = express();
+const cors = require("cors");
+app.use(cors());
 app.use(express.json());
 app.use("/", complaintRoutes);
 app.use("/admin",adminRoutes);
